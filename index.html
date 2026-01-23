@@ -3,69 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Alejandra Banda | QA Manual Jr</title>
+    <title>Portfolio | Alejandra Banda | QA Manual </title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
+<!-- Header / Navegación -->
 <header>
     <div class="container">
         <nav>
             <a href="#home" class="logo">Alejandra Banda</a>
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#projects">Proyectos</a></li>
                 <li><a href="#experience">Experiencia</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
+            <button class="mobile-menu"><span>☰</span></button>
         </nav>
     </div>
 </header>
 
-<!-- HERO -->
+<!-- Hero / Home -->
 <section id="home" class="hero">
     <div class="container hero-container">
         <div class="hero-text">
-            <h1>QA Manual Jr | QA Tester Jr</h1>
+            <h1>Alejandra Banda Pérez</h1>
+            <h2>QA Manual  | QA Tester </h2>
             <p>Testing funcional · API · SQL básico · Automatización básica</p>
-            <p>QA Manual Jr con experiencia en proyectos de transporte, e-commerce y delivery. Diseñando y ejecutando casos de prueba, reportando defectos en Jira y validando calidad de software.</p>
         </div>
         <div class="hero-card">
             <img src="ale profesional.jpg" alt="Alejandra Banda">
-            <h3>Alejandra Banda Pérez</h3>
             <div class="profile-contact">
-                <p>✉️ alexabandap2@gmail.com</p>
-                <p>📱 +52 XXXXXXXX</p>
-                <p>💼 <a href="https://www.linkedin.com/in/alejandrabanda/" target="_blank">LinkedIn</a></p>
-                <p>💻 <a href="https://github.com/alexabandap/" target="_blank">GitHub</a></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Expertise -->
-<section id="expertise" class="section">
-    <div class="container">
-        <h2>Mi Experiencia</h2>
-        <div class="expertise-grid">
-            <div class="expertise-card">
-                <h3>QA Manual</h3>
-                <p>Diseño y ejecución de casos de prueba, listas de verificación, pruebas funcionales y de regresión.</p>
-            </div>
-            <div class="expertise-card">
-                <h3>Testing de API</h3>
-                <p>Validación de endpoints, estructuras de JSON y códigos de estado utilizando Postman.</p>
-            </div>
-            <div class="expertise-card">
-                <h3>SQL Básico</h3>
-                <p>Consultas para análisis de datos y validación de logs de aplicaciones y sistemas.</p>
-            </div>
-            <div class="expertise-card">
-                <h3>Automatización</h3>
-                <p>Automatización funcional básica de flujos con Selenium.</p>
+                <div><strong>Email:</strong> alexabandap2@gmail.com</div>
+                <div><strong>Tel:</strong> +52 1 XXX XXX XXXX</div>
+                <div><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/alejandrabanda" target="_blank">linkedin.com/in/alejandrabanda</a></div>
+                <div><strong>GitHub:</strong> <a href="https://github.com/alexabandap/" target="_blank">github.com/alexabandap</a></div>
             </div>
         </div>
     </div>
@@ -75,54 +50,95 @@
 <section id="skills" class="section">
     <div class="container">
         <h2>Habilidades Técnicas</h2>
-        <div class="skills-grid">
-            <span>Testing Manual</span>
-            <span>Jira</span>
-            <span>Postman</span>
-            <span>SQL Básico</span>
-            <span>Android Studio</span>
-            <span>Selenium</span>
-            <span>Git/GitHub</span>
-            <span>Metodologías Ágiles</span>
-        </div>
+        <ul class="skills-list">
+            <li>Testing manual funcional</li>
+            <li>Diseño de casos de prueba</li>
+            <li>Listas de comprobación</li>
+            <li>Reporte de bugs en Jira</li>
+            <li>Pruebas API con Postman</li>
+            <li>SQL básico</li>
+            <li>Android Studio</li>
+            <li>Selenium básico</li>
+            <li>Metodologías ágiles</li>
+            <li>Git / GitHub</li>
+        </ul>
     </div>
 </section>
 
 <!-- Projects -->
 <section id="projects" class="section">
     <div class="container">
-        <h2>Proyectos</h2>
-        <div class="projects-grid">
+        <h2>Proyectos Relevantes</h2>
 
-            <div class="project-card">
-                <h3>Urban Routes — QA Manual (Web)</h3>
-                <p>Aplicación de transporte, pruebas funcionales, pagos, reservas y flujos críticos.</p>
-                <p><strong>Resultado:</strong> Se detectaron errores en cálculos y reservas fortaleciendo la calidad.</p>
-                <a href="https://github.com/alexabandap/qa-project-Urban-Routes-es" target="_blank">Ver Proyecto</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Urban Grocers — API Testing</h3>
-                <p>Validación de endpoints REST, estructura JSON, pruebas de borde y negativas.</p>
-                <p><strong>Resultado:</strong> Identificación de errores en reglas de negocio y datos.</p>
-                <a href="#" target="_blank">Ver Proyecto</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Urban Lunch — App móvil / SQL / Automation</h3>
-                <p>Pruebas funcionales, consultas SQL básicas y automatización funcional de flujos clave.</p>
-                <p><strong>Resultado:</strong> Se fortaleció la validación funcional antes de liberación.</p>
-                <a href="#" target="_blank">Ver Proyecto</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Urban Scooter — Proyecto Integrador</h3>
-                <p>Validación integral de flujos de usuario antes de liberación.</p>
-                <p><strong>Resultado:</strong> Consolidación de proceso de testing de extremo a extremo.</p>
-                <a href="#" target="_blank">Ver Proyecto</a>
-            </div>
-
+        <!-- Urban Routes -->
+        <div class="project-card">
+            <h3>Urban Routes — QA Manual (Web)</h3>
+            <p><strong>Contexto:</strong> Aplicación de transporte con lógica de cálculo de tarifas, tiempos de viaje y flujo de reserva.</p>
+            <p><strong>Mi rol:</strong> QA Manual a cargo de pruebas funcionales y validación de flujos críticos.</p>
+            <p><strong>Qué hice:</strong>
+                <ul>
+                    <li>Diseñé y ejecuté casos de prueba para cálculo de costos, tiempos y reservas.</li>
+                    <li>Pruebas de diseño y métodos de pago.</li>
+                    <li>Probé flujos web y app móvil usando Android Studio.</li>
+                    <li>Reporté defectos en Jira.</li>
+                    <li>Automatización funcional básica para flujos clave.</li>
+                </ul>
+            </p>
+            <p><strong>Resultado:</strong> Se detectaron errores en cálculos, reservas y validaciones de pago, fortaleciendo la calidad antes de liberación.</p>
+            <p>
+                <a href="https://docs.google.com/spreadsheets/d/1dUvQbGUGmc1LDtYWJrE7zVPLSvu4bxp0/edit?usp=sharing" target="_blank">Casos de prueba y bugs 1</a> | 
+                <a href="https://docs.google.com/spreadsheets/d/1j7M2TQRy1-xb9a_seMv8YFFH5SPtAsA9/edit?usp=sharing" target="_blank">Casos de prueba y bugs 2</a> | 
+                <a href="https://github.com/alexabandap/qa-project-Urban-Routes-es" target="_blank">Automatización</a>
+            </p>
         </div>
+
+        <!-- Urban Grocers -->
+        <div class="project-card">
+            <h3>Urban Grocers — API Testing</h3>
+            <p><strong>Contexto:</strong> Plataforma de e-commerce enfocada en pedidos y gestión de productos.</p>
+            <p><strong>Mi rol:</strong> QA Manual responsable de pruebas de API y validación de reglas de negocio.</p>
+            <p><strong>Qué hice:</strong>
+                <ul>
+                    <li>Diseñé y ejecuté 43 casos de prueba sobre endpoints REST.</li>
+                    <li>Validé estructura de respuestas JSON y códigos de estado.</li>
+                    <li>Detecté y documenté 33 defectos utilizando Jira.</li>
+                    <li>Verifiqué reglas de negocio mediante pruebas negativas y de borde.</li>
+                </ul>
+            </p>
+            <p><strong>Resultado:</strong> Se identificaron errores en validaciones y manejo de datos, contribuyendo a mejorar la estabilidad de la API.</p>
+            <p>
+                <a href="https://docs.google.com/spreadsheets/d/1D6yrMs5ydcfmEkzN7AzzuItjnJ18Z_pt/edit?usp=sharing" target="_blank">Casos de prueba API</a>
+            </p>
+        </div>
+
+        <!-- Urban Lunch -->
+        <div class="project-card">
+            <h3>Urban Lunch — QA Manual (App móvil / SQL / Automation)</h3>
+            <p><strong>Qué hice:</strong>
+                <ul>
+                    <li>Ejecuté 40 pruebas funcionales en app móvil usando Android Studio.</li>
+                    <li>Detecté y documenté 4 bugs funcionales y de interfaz.</li>
+                    <li>Consultas SQL básicas para análisis de logs y datos.</li>
+                    <li>Automatización funcional básica para validar la creación y funcionamiento de un kit de usuario.</li>
+                </ul>
+            </p>
+            <p><strong>Resultado:</strong> Se detectaron errores en flujos clave y se fortaleció la validación funcional antes de liberación.</p>
+        </div>
+
+        <!-- Urban Scooter -->
+        <div class="project-card">
+            <h3>Urban Scooter — Proyecto Integrador QA Manual</h3>
+            <p><strong>Qué hice:</strong>
+                <ul>
+                    <li>Analicé requisitos y flujos principales del sistema.</li>
+                    <li>Diseñé y ejecuté casos de prueba funcionales y de regresión.</li>
+                    <li>Probé escenarios críticos de uso y manejo de errores.</li>
+                    <li>Documenté defectos y observaciones durante el proceso de prueba.</li>
+                </ul>
+            </p>
+            <p><strong>Resultado:</strong> Validación integral de la aplicación, consolidando el proceso de testing de extremo a extremo.</p>
+        </div>
+
     </div>
 </section>
 
@@ -134,31 +150,38 @@
             <div class="timeline-item">
                 <div class="timeline-date">2025</div>
                 <div class="timeline-title">QA Manual Jr — Proyectos de Testing de Software</div>
-                <p>Diseño y ejecución de 140+ casos de prueba, identificación y documentación de 70+ defectos, pruebas API y SQL, automatización básica.</p>
+                <ul>
+                    <li>Diseño y ejecución de 140+ casos de prueba funcionales.</li>
+                    <li>Identificación y documentación de 70+ defectos en Jira.</li>
+                    <li>Pruebas API con Postman, pruebas móviles y automatización básica con Selenium.</li>
+                    <li>Consultas SQL básicas.</li>
+                </ul>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-date">2020 – Actual</div>
                 <div class="timeline-title">Analista de Calidad de Producto Digital — Inspirapaper</div>
-                <p>Validación de productos digitales, consistencia de contenido, documentación de mejoras y experiencia de usuario.</p>
+                <ul>
+                    <li>Revisión y validación de productos digitales antes de su publicación.</li>
+                    <li>Documentación de cambios y mejoras enfocadas en experiencia de usuario.</li>
+                </ul>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-date">2018 – 2023</div>
                 <div class="timeline-title">Profesora de Regularización en Ciencias</div>
-                <p>Análisis de necesidades académicas, explicación de procesos complejos y seguimiento de avances.</p>
+                <ul>
+                    <li>Análisis de necesidades académicas y seguimiento de avances.</li>
+                    <li>Documentación de resultados y progreso académico.</li>
+                     <li>Preparación para examen de ingreso a nivel medio superior y superior.</li>
+                </ul>
             </div>
-
+        </div>
+        <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-date">Licenciatura: UNAM</div>
-                <div class="timeline-title">Química</div>
-                <p>Formación en análisis, documentación y pensamiento analítico.</p>
+                <div class="timeline-date">Licenciatura</div>
+                <div class="timeline-title">Química — UNAM</div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-date">Certificación QA Engineer: Triple Ten</div>
-                <div class="timeline-title">QA Manual Jr</div>
-                <p>Formación práctica en pruebas funcionales y automatización básica.</p>
+                <div class="timeline-title">Certificación QA Engineer — Triple Ten</div>
             </div>
         </div>
     </div>
@@ -168,13 +191,14 @@
 <section id="contact" class="section">
     <div class="container">
         <h2>Contacto</h2>
-        <p>✉️ alexabandap2@gmail.com</p>
-        <p>📱 +52 XXXXXXXX</p>
-        <p>💼 <a href="https://www.linkedin.com/in/alejandrabanda/" target="_blank">LinkedIn</a></p>
-        <p>💻 <a href="https://github.com/alexabandap/" target="_blank">GitHub</a></p>
+        <div>
+            <p><strong>Email:</strong> alexabandap2@gmail.com</p>
+            <p><strong>Teléfono:</strong> +52 5524238687</p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/alejandrabanda" target="_blank">linkedin.com/in/alejandrabanda</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/alexabandap/" target="_blank">github.com/alexabandap</a></p>
+        </div>
     </div>
 </section>
 
-<script src="script.js"></script>
 </body>
 </html>
