@@ -1,239 +1,443 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio QA | Alejandra Banda</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #111; line-height: 1.6; scroll-behavior: smooth; }
-  a { color: #2563eb; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Alejandra Banda | QA Manual Jr</title>
+    <style>
+        :root {
+            --color-primary: #FF6F61; /* Coral pastel */
+            --color-bg: #F7F7F7;      /* Blanco suave */
+            --color-text: #333;
+            --color-gray: #888;
+            --font-family: 'Arial', sans-serif;
+        }
 
-  nav { position: fixed; top: 0; left: 0; width: 100%; background: #fff; border-bottom: 1px solid #ddd; z-index: 999; display: flex; justify-content: center; padding: 0.8rem 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-  nav a { margin: 0 1rem; font-weight: 500; color: #111; }
-  nav a:hover { color: #2563eb; }
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background: var(--color-bg);
+            color: var(--color-text);
+            scroll-behavior: smooth;
+        }
 
-  .container { max-width: 1000px; margin: 6rem auto 2rem; padding: 0 1rem; }
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
 
-  h2.section-title { font-size: 1.8rem; margin-bottom: 1rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
 
-  p, li { margin-bottom: 0.6rem; }
-  ul { margin-left: 1.2rem; }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
 
-  /* Hero */
-  .hero { display: flex; flex-wrap: wrap; gap: 1.5rem; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); align-items: center; margin-bottom: 2rem; }
-  .hero img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #2563eb; }
-  .hero-text { flex: 1; }
-  .hero-text h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #2563eb; }
-  .hero-text p { font-size: 1rem; margin-bottom: 0.4rem; }
+        .logo {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--color-primary);
+        }
 
-  /* Skills */
-  .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
-  .skill { padding: 0.35rem 0.7rem; border-radius: 6px; background: #2563eb; color: #fff; font-size: 0.9rem; }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
 
-  /* Projects cards */
-  .projects-grid { display: grid; gap: 1.8rem; margin-top: 1rem; }
-  @media (min-width: 700px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
-  .project-card { background: #fff; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s, opacity 0.8s; opacity: 0; transform: translateY(30px); }
-  .project-card.visible { opacity: 1; transform: translateY(0); }
-  .project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-  .project-card h3 { margin-bottom: 0.5rem; color: #2563eb; }
-  .project-card ul { margin-left: 1.2rem; margin-bottom: 0.5rem; }
+        .nav-links li {
+            list-style: none;
+        }
 
-  /* Timeline */
-  .timeline { position: relative; margin: 2rem 0; padding-left: 2rem; }
-  .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 4px; background: #2563eb; border-radius: 2px; }
-  .timeline-item { position: relative; margin-bottom: 2rem; opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
-  .timeline-item.visible { opacity: 1; transform: translateY(0); }
-  .timeline-item::before { content: ''; position: absolute; left: 12px; background: #2563eb; border-radius: 50%; width: 16px; height: 16px; top: 0; }
-  .timeline-content { padding-left: 2rem; }
-  .timeline-date { font-weight: bold; margin-bottom: 0.3rem; color: #111; }
-  .timeline-title { font-size: 1.1rem; font-weight: 600; color: #2563eb; }
-  .timeline-company { font-style: italic; margin-bottom: 0.3rem; }
-  .timeline-description, .timeline-achievements { font-size: 0.95rem; color: #333; }
+        .nav-links li a {
+            font-weight: 500;
+        }
 
-  /* Secciones con colores */
-  #skills { background: #e0f2fe; padding: 1rem; border-radius: 10px; }
-  #projects { background: #fef3c7; padding: 1rem; border-radius: 10px; }
-  #experience { background: #fff7ed; padding: 1rem; border-radius: 10px; }
-  #contact { background: #d1fae5; padding: 1rem; border-radius: 10px; }
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
 
-  footer { text-align: center; font-size: 0.9rem; color: #666; padding: 2rem 1rem; margin-top: 3rem; }
+        @media(max-width:768px){
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 1rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                border-radius: 0 0 12px 12px;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
 
-</style>
+        /* Hero */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 2rem 4rem 2rem;
+            background: #fff;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1 1 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+        }
+
+        .hero-text p {
+            margin: 0.5rem 0;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            margin-right: 1rem;
+            margin-top: 1rem;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .hero-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            flex: 0 1 250px;
+        }
+
+        .hero-card img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .profile-contact {
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .icon-emoji {
+            margin-right: 0.5rem;
+        }
+
+        /* Section Titles */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--color-gray);
+            margin-bottom: 2rem;
+        }
+
+        /* Expertise / Habilidades */
+        .expertise-grid, .competencias-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .expertise-card, .competencia-card, .project-card, .timeline-item, .contact-method, .advantage-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            background: #fff;
+            border-left: 4px solid var(--color-primary);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .project-card a.project-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#inicio" class="logo">Alejandra Banda</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#expertise">Qué hago mejor</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu"><span>☰</span></button>
+        </nav>
+    </header>
 
-<nav>
-  <a href="#home">Inicio</a>
-  <a href="#experience">Experiencia</a>
-  <a href="#skills">Habilidades</a>
-  <a href="#projects">Proyectos</a>
-  <a href="#contact">Contacto</a>
-</nav>
-
-<div class="container">
-
-  <!-- Hero -->
-  <section id="home">
-    <div class="hero">
-      <img src="https://github.com/alexabandap/alexabandap.github.io/blob/main/ale%20profesional.jpg?raw=true" alt="Foto Alejandra">
-      <div class="hero-text">
-        <h1>Alejandra Banda Pérez</h1>
-        <p>QA Manual Jr | QA Tester Jr</p>
-        <p>Testing funcional · API · SQL básico · Automatización básica</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/alejandrabanda/" target="_blank">linkedin.com/in/alejandrabanda</a></p>
-        <p>GitHub: <a href="https://github.com/alexabandap/" target="_blank">github.com/alexabandap</a></p>
-        <p>Email: alexabandap2@gmail.com</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experiencia -->
-  <section id="experience">
-    <h2 class="section-title">Experiencia</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-date">2025</div>
-          <div class="timeline-title">QA Manual Jr — Proyectos de Testing de Software</div>
-          <div class="timeline-company">Diversos proyectos: Transporte, E-commerce, Delivery</div>
-          <ul class="timeline-achievements">
-            <li>Diseño y ejecución de 140+ casos de prueba funcionales (Web, móvil, API)</li>
-            <li>Identificación y documentación de 70+ defectos en Jira</li>
-            <li>Pruebas de API con Postman y validaciones SQL básicas</li>
-            <li>Automatización funcional básica con Selenium</li>
-            <li>Pruebas en app móvil con Android Studio</li>
-          </ul>
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Alejandra Banda Pérez</h1>
+                <p>QA Manual Jr | QA Tester Jr</p>
+                <p>Testing funcional · API · SQL básico · Automatización básica</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/alejandrabanda/" target="_blank">linkedin.com/in/alejandrabanda</a></p>
+                <p>GitHub: <a href="https://github.com/alexabandap/" target="_blank">github.com/alexabandap</a></p>
+                <p>Email: alexabandap2@gmail.com</p>
+            </div>
+            <div class="hero-card">
+                <img src="https://github.com/alexabandap/alexabandap.github.io/blob/main/ale%20profesional.jpg?raw=true" alt="Alejandra Banda">
+            </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-date">2020–Actual</div>
-          <div class="timeline-title">Analista de Calidad de Producto Digital</div>
-          <div class="timeline-company">Inspirapaper</div>
-          <ul class="timeline-achievements">
-            <li>Revisión y validación de productos digitales antes de publicación</li>
-            <li>Verificación de consistencia de contenido, reglas y flujos</li>
-            <li>Documentación de cambios y mejoras centradas en la experiencia del usuario</li>
-          </ul>
+    </section>
+
+    <!-- Qué hago mejor -->
+    <section id="expertise" class="section">
+        <div>
+            <h2 class="section-title">Qué hago mejor</h2>
+            <p class="section-subtitle">Aplicando atención al detalle, análisis y validación</p>
+            <div class="expertise-grid">
+                <div class="expertise-card animate-on-scroll">
+                    <h3>Testing Funcional</h3>
+                    <ul>
+                        <li>Diseño y ejecución de casos de prueba</li>
+                        <li>Pruebas de regresión y validación de flujos críticos</li>
+                        <li>Documentación y reporte de bugs en Jira</li>
+                    </ul>
+                </div>
+                <div class="expertise-card animate-on-scroll">
+                    <h3>Pruebas de API</h3>
+                    <ul>
+                        <li>Diseño y ejecución de casos de prueba sobre endpoints REST</li>
+                        <li>Validación de respuestas JSON y códigos de estado</li>
+                        <li>Pruebas negativas y de borde</li>
+                    </ul>
+                </div>
+                <div class="expertise-card animate-on-scroll">
+                    <h3>Automatización básica</h3>
+                    <ul>
+                        <li>Automatización funcional con Selenium</li>
+                        <li>Validación de flujos clave</li>
+                        <li>Soporte a testing manual</li>
+                    </ul>
+                </div>
+                <div class="expertise-card animate-on-scroll">
+                    <h3>SQL Básico</h3>
+                    <ul>
+                        <li>Consultas para validación de datos y análisis de incidencias</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-date">2018–2023</div>
-          <div class="timeline-title">Profesora de Regularización en Ciencias</div>
-          <div class="timeline-company">Diversos alumnos</div>
-          <ul class="timeline-achievements">
-            <li>Análisis de necesidades académicas y definición de objetivos</li>
-            <li>Explicación clara de procesos complejos y seguimiento de avances</li>
-          </ul>
+    </section>
+
+    <!-- Skills / Habilidades -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="competencias-grid">
+            <div class="competencia-card animate-on-scroll">
+                <h3>Herramientas y metodologías</h3>
+                <ul>
+                    <li>Jira, Postman, Android Studio, Selenium básico</li>
+                    <li>Testing manual funcional</li>
+                    <li>Diseño de casos de prueba y checklists</li>
+                    <li>Metodologías ágiles, Git/GitHub</li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-date">Licenciatura en Química — Titulada</div>
-          <div class="timeline-title">Formación Académica</div>
-          <div class="timeline-company">Universidad</div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Proyectos</h2>
+        <div class="projects-grid">
+            <div class="project-card animate-on-scroll">
+                <h3>Urban Routes — QA Manual (Web)</h3>
+                <p><strong>Contexto:</strong> Aplicación de transporte con cálculo de tarifas y flujo de reserva.</p>
+                <p><strong>Rol:</strong> QA Manual</p>
+                <ul>
+                    <li>Diseño y ejecución de casos de prueba</li>
+                    <li>Pruebas web y móvil</li>
+                    <li>Reporte de defectos en Jira</li>
+                    <li>Automatización básica de flujos clave</li>
+                </ul>
+                <p><strong>Resultado:</strong> Errores detectados y calidad fortalecida antes de liberación.</p>
+                <p><a href="https://docs.google.com/spreadsheets/d/1dUvQbGUGmc1LDtYWJrE7zVPLSvu4bxp0/edit?usp=sharing" target="_blank">Casos de prueba / Bugs</a></p>
+                <p><a href="https://github.com/alexabandap/qa-project-Urban-Routes-es" target="_blank">Automatización</a></p>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <h3>Urban Grocers — API Testing</h3>
+                <p><strong>Contexto:</strong> Plataforma e-commerce, validación de endpoints de API.</p>
+                <p><strong>Rol:</strong> QA Manual</p>
+                <ul>
+                    <li>Diseño y ejecución de 43 casos de prueba</li>
+                    <li>Validación de respuestas JSON y códigos de estado</li>
+                    <li>Documentación de 33 defectos en Jira</li>
+                </ul>
+                <p><strong>Resultado:</strong> Estabilidad de la API reforzada.</p>
+                <p><a href="https://docs.google.com/spreadsheets/d/1D6yrMs5ydcfmEkzN7AzzuItjnJ18Z_pt/edit?usp=sharing" target="_blank">Casos de prueba API</a></p>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <h3>Urban Lunch — QA Manual / SQL / Automation</h3>
+                <p><strong>Contexto:</strong> App de delivery, validación de flujos y datos.</p>
+                <p><strong>Rol:</strong> QA Manual</p>
+                <ul>
+                    <li>40 pruebas funcionales en app móvil</li>
+                    <li>Detección de bugs funcionales y de interfaz</li>
+                    <li>Consultas SQL básicas</li>
+                    <li>Automatización funcional básica de kit de usuario</li>
+                </ul>
+                <p><strong>Resultado:</strong> Validación funcional fortalecida antes de liberación.</p>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <h3>Urban Scooter — Proyecto Integrador QA Manual</h3>
+                <p><strong>Contexto:</strong> App de renta de scooters eléctricos, validación de flujos completos.</p>
+                <p><strong>Rol:</strong> QA Manual</p>
+                <ul>
+                    <li>Análisis de requisitos y flujos principales</li>
+                    <li>Diseño y ejecución de casos de prueba funcionales y regresión</li>
+                    <li>Documentación de defectos y observaciones</li>
+                </ul>
+                <p><strong>Resultado:</strong> Funcionalidad integral validada.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Habilidades -->
-  <section id="skills">
-    <h2 class="section-title">Habilidades</h2>
-    <div class="skills">
-      <div class="skill">QA Manual</div>
-      <div class="skill">Testing Web & Mobile</div>
-      <div class="skill">API Testing</div>
-      <div class="skill">SQL Básico</div>
-      <div class="skill">Selenium Básico</div>
-      <div class="skill">Jira</div>
-      <div class="skill">Postman</div>
-      <div class="skill">Casos de Prueba</div>
-      <div class="skill">Regression Testing</div>
-      <div class="skill">Clases de Equivalencia</div>
-      <div class="skill">Metodologías Ágiles</div>
-      <div class="skill">Git/GitHub</div>
-    </div>
-  </section>
+    <!-- Experiencia -->
+    <section id="experience" class="section">
+        <h2 class="section-title">Experiencia</h2>
+        <div class="timeline">
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-title">QA Manual Jr — Proyectos de Testing</div>
+                <p>Diseño y ejecución de más de 140 casos de prueba, identificación y documentación de 70+ defectos, pruebas API con Postman, pruebas móviles con Android Studio, automatización básica con Selenium y consultas SQL.</p>
+            </div>
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-date">2020 – Actual</div>
+                <div class="timeline-title">Analista de Calidad de Producto Digital — Inspirapaper</div>
+                <p>Revisión y validación de productos digitales antes de publicación, verificación de consistencia de contenido y flujos de uso, identificación de errores y documentación de mejoras.</p>
+            </div>
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-date">2018 – 2023</div>
+                <div class="timeline-title">Profesora de Regularización en Ciencias</div>
+                <p>Análisis de necesidades académicas, definición de objetivos, explicación de procesos complejos y documentación de resultados.</p>
+            </div>
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-date">Licenciatura en Química — UNAM</div>
+                <p>Formación académica en química, pensamiento analítico y validación de procesos.</p>
+            </div>
+            <div class="timeline-item animate-on-scroll">
+                <div class="timeline-date">Certificación QA Engineer — TripleTen</div>
+                <p>Formación especializada en testing manual, API, SQL y automatización básica.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Proyectos -->
-  <section id="projects">
-    <h2 class="section-title">Proyectos</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>🚗 Urban Routes — QA Manual (Web)</h3>
-        <ul>
-          <li>Diseño y ejecución de casos de prueba</li>
-          <li>Pruebas web y app móvil con Android Studio</li>
-          <li>Reporte de defectos en Jira</li>
-          <li>Automatización funcional básica</li>
-        </ul>
-        <p><a href="https://github.com/alexabandap/qa-project-Urban-Routes-es" target="_blank">Ver repositorio</a></p>
-      </div>
-      <div class="project-card">
-        <h3>🛒 Urban Grocers — API Testing</h3>
-        <ul>
-          <li>43 casos de prueba en endpoints REST</li>
-          <li>Validación de respuestas JSON y códigos de estado</li>
-          <li>Documentación de 33 defectos en Jira</li>
-        </ul>
-        <p><a href="https://docs.google.com/spreadsheets/d/1D6yrMs5ydcfmEkzN7AzzuItjnJ18Z_pt/edit?usp=sharing" target="_blank">Casos de prueba API</a></p>
-      </div>
-      <div class="project-card">
-        <h3>🍱 Urban Lunch — QA Manual (App móvil / SQL / Automation)</h3>
-        <ul>
-          <li>40 pruebas funcionales en Android Studio</li>
-          <li>Detección de 4 bugs funcionales y de interfaz</li>
-          <li>Consultas SQL básicas</li>
-          <li>Automatización funcional básica</li>
-        </ul>
-        <p><a href="https://docs.google.com/spreadsheets/d/1dUvQbGUGmc1LDtYWJrE7zVPLSvu4bxp0/edit?usp=sharing" target="_blank">Casos de prueba y bugs</a></p>
-      </div>
-      <div class="project-card">
-        <h3>🛴 Urban Scooter — Proyecto Integrador QA Manual</h3>
-        <ul>
-          <li>Validación integral de la app</li>
-          <li>Diseño y ejecución de casos de prueba funcionales y de regresión</li>
-          <li>Documentación de defectos y observaciones</li>
-        </ul>
-        <p><a href="https://github.com/alexabandap/qa-project-Urban-Scooter" target="_blank">Ver repositorio</a></p>
-      </div>
-    </div>
-  </section>
+    <!-- Contacto -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-method animate-on-scroll">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <span>alexabandap2@gmail.com</span>
+            </div>
+            <div class="contact-method animate-on-scroll">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/alejandrabanda/" target="_blank">linkedin.com/in/alejandrabanda</a>
+            </div>
+            <div class="contact-method animate-on-scroll">
+                <div class="contact-icon">💻</div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/alexabandap/" target="_blank">github.com/alexabandap</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contacto -->
-  <section id="contact">
-    <h2 class="section-title">Contacto</h2>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/alejandrabanda/" target="_blank">linkedin.com/in/alejandrabanda</a></p>
-    <p>GitHub: <a href="https://github.com/alexabandap/" target="_blank">github.com/alexabandap</a></p>
-    <p>Email: alexabandap2@gmail.com</p>
-  </section>
-
-</div>
-
-<footer>
-  © 2026 Alejandra Banda — QA Manual Junior
-</footer>
-
-<script>
-  // Animaciones al hacer scroll
-  function revealOnScroll() {
-    const items = document.querySelectorAll('.timeline-item, .project-card');
-    const windowHeight = window.innerHeight;
-    items.forEach(item => {
-      const itemTop = item.getBoundingClientRect().top;
-      if(itemTop < windowHeight - 100) {
-        item.classList.add('visible');
-      }
-    });
-  }
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-</script>
-
-</body>
-</html>
+    <script>
+        // Smooth scrolling for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
