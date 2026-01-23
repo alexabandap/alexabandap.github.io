@@ -4,168 +4,194 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alejandra Banda | QA Junior</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      background-color: #f7f7f7;
-      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #ffffff;
+      color: #111;
       line-height: 1.6;
     }
-    header {
-      background-color: #111827;
-      color: #ffffff;
-      padding: 2.5rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 900px;
+
+    .container {
+      max-width: 780px;
       margin: auto;
-      padding: 2rem 1rem;
+      padding: 4rem 1.5rem;
     }
+
+    header {
+      margin-bottom: 4rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
     section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3.5rem;
     }
+
     h2 {
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 0.4rem;
+      font-size: 1.6rem;
       margin-bottom: 1rem;
-      color: #111827;
     }
+
+    p {
+      font-size: 1.05rem;
+      color: #333;
+    }
+
     ul {
       padding-left: 1.2rem;
     }
-    .skills span {
-      display: inline-block;
-      background: #e5e7eb;
-      padding: 0.4rem 0.7rem;
-      margin: 0.3rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
+
+    li {
+      margin-bottom: 0.4rem;
     }
-    .project {
-      background: #ffffff;
-      padding: 1.2rem;
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill {
+      border: 1px solid #ddd;
+      padding: 0.35rem 0.7rem;
       border-radius: 6px;
-      margin-bottom: 1rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #111827;
-      color: #ffffff;
       font-size: 0.9rem;
     }
+
+    .project {
+      margin-bottom: 2rem;
+    }
+
+    .project h3 {
+      margin-bottom: 0.4rem;
+    }
+
+    .project p {
+      margin-top: 0;
+    }
+
     a {
       color: #2563eb;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 5rem;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Alejandra Banda</h1>
-  <p>QA Junior | Manual Testing | Enfoque en Calidad y Procesos</p>
-</header>
+  <div class="container">
 
-<main>
+    <header>
+      <h1>Alejandra Banda</h1>
+      <p>QA Junior · Manual Testing · Enfoque en calidad y procesos</p>
+    </header>
 
-  <section>
-    <h2>Sobre mí</h2>
-    <p>
-      Soy QA Junior, con formación en química y experiencia en docencia y en procesos de creación y validación de productos.
-      Gracias a esta trayectoria, desarrollé un enfoque de análisis y validación, revisando, detectando errores y asegurando
-      que las entregas funcionen correctamente antes de llegar al cliente.
-    </p>
-    <p>
-      Actualmente me desempeño en el área de testing manual, aplicando este enfoque de calidad en cada proyecto,
-      asegurando entregas consistentes y confiables, y aprendiendo continuamente para mejorar procesos.
-    </p>
-  </section>
-
-  <section>
-    <h2>Habilidades</h2>
-    <div class="skills">
-      <span>Testing Manual</span>
-      <span>Casos de Prueba</span>
-      <span>Reportes de Bugs</span>
-      <span>Jira</span>
-      <span>Postman</span>
-      <span>SQL (consultas básicas)</span>
-      <span>Clases de Equivalencia</span>
-      <span>Valores Límite</span>
-      <span>Análisis de Requisitos</span>
-      <span>Metodologías Ágiles</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Proyectos</h2>
-
-    <div class="project">
-      <h3>Urban Scooter – Proyecto QA</h3>
+    <section>
+      <h2>Sobre mí</h2>
       <p>
-        Proyecto de testing manual enfocado en análisis de requisitos, diseño de casos de prueba,
-        validación de flujos críticos y documentación de defectos.
+        Soy QA Junior, con formación en química y experiencia en docencia y en procesos de creación
+        y validación de productos. Gracias a esta trayectoria, desarrollé un enfoque de análisis y
+        validación, revisando y detectando errores para asegurar que las entregas funcionen
+        correctamente antes de llegar al cliente.
       </p>
-      <ul>
-        <li>Creación de checklist y casos de prueba</li>
-        <li>Reporte de bugs en Jira</li>
-        <li>Análisis de reglas de negocio</li>
-      </ul>
       <p>
-        🔗 <a href="#" target="_blank">Repositorio / Documentación</a>
+        Actualmente me desempeño en testing manual, aplicando este enfoque de calidad en cada
+        proyecto, asegurando entregas consistentes y confiables, y aprendiendo continuamente para
+        mejorar procesos.
       </p>
-    </div>
+    </section>
 
-    <div class="project">
-      <h3>Planner Inteligente – Proyecto Personal</h3>
-      <p>
-        Diseño y validación de una herramienta de organización personal,
-        enfocada en mejorar flujos, estructura y experiencia de usuario.
-      </p>
-      <ul>
-        <li>Identificación de errores de flujo</li>
-        <li>Mejora continua basada en uso real</li>
-        <li>Enfoque en calidad y usabilidad</li>
-      </ul>
-      <p>
-        🔗 <a href="#" target="_blank">Descripción del proyecto</a>
-      </p>
-    </div>
+    <section>
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <div class="skill">Testing Manual</div>
+        <div class="skill">Casos de Prueba</div>
+        <div class="skill">Reporte de Bugs</div>
+        <div class="skill">Jira</div>
+        <div class="skill">Postman</div>
+        <div class="skill">SQL (consultas básicas)</div>
+        <div class="skill">Clases de Equivalencia</div>
+        <div class="skill">Valores Límite</div>
+        <div class="skill">Análisis de Requisitos</div>
+        <div class="skill">Metodologías Ágiles</div>
+      </div>
+    </section>
 
-  </section>
+    <section>
+      <h2>Proyectos</h2>
 
-  <section>
-    <h2>Contacto</h2>
-    <p>
-      GitHub: <a href="https://github.com/alexabandap" target="_blank">github.com/alexabandap</a>
-    </p>
-    <p>
-      LinkedIn: <a href="#" target="_blank">LinkedIn</a>
-    </p>
-  </section>
+      <div class="project">
+        <h3>Urban Scooter – Proyecto QA</h3>
+        <p>
+          Proyecto de testing manual enfocado en análisis de requisitos, diseño de casos de prueba,
+          validación de flujos críticos y documentación de defectos.
+        </p>
+        <ul>
+          <li>Diseño de checklist y casos de prueba</li>
+          <li>Reporte de bugs en Jira</li>
+          <li>Análisis de reglas de negocio</li>
+        </ul>
+        <p>
+          <a href="#">Repositorio / Documentación</a>
+        </p>
+      </div>
 
-</main>
+      <div class="project">
+        <h3>Planner Inteligente – Proyecto Personal</h3>
+        <p>
+          Diseño y validación de una herramienta de organización personal, enfocada en mejorar
+          flujos, estructura y experiencia de usuario.
+        </p>
+        <ul>
+          <li>Identificación de errores de flujo</li>
+          <li>Mejora continua basada en uso real</li>
+          <li>Enfoque en calidad y usabilidad</li>
+        </ul>
+        <p>
+          <a href="#">Descripción del proyecto</a>
+        </p>
+      </div>
 
-<footer>
-  © 2026 Alejandra Banda — QA Junior
-</footer>
+    </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <p>GitHub: <a href="https://github.com/alexabandap" target="_blank">github.com/alexabandap</a></p>
+      <p>LinkedIn: <a href="#" target="_blank">LinkedIn</a></p>
+    </section>
+
+    <footer>
+      © 2026 — Alejandra Banda
+    </footer>
+
+  </div>
 
 </body>
 </html>
+
